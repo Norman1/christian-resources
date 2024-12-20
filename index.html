@@ -12,56 +12,29 @@
 <body>
 <header id="pageHeader">Header</header>
 <article id="mainArticle">
-    <h1>Website Template</h1>
+    <h1>Bible Reading Plan</h1>
     <section id="about">
         <h2>About</h2>
-        <p>This is an HTML template for text heavy documentation projects suiting my needs.
-            I want a minimalistic and professional looking design while not using any CSS library. The design is in the
-            form
-            of the holy grail layout.</p>
-        <p>The following sections are both for documentation and for me to test the design against what is specified
-            here.</p>
+        <p>Reading the Bible cover to cover from Genesis to Revelation is great, but has the downside that the order of the books is in a way that it takes the reader a long time until he reaches the New Testament, which can be demotivating.
+        There are various solutions e.g. some read the Old and New Testament in parallel. However, I haven't felt happy with that, so I created this small program to automatically generate a pathway through the
+        Bible to read it cover to cover. This program randomizes the order of the Bible books while ensuring that the Old Testament and New Testament get read in a balanced way. </p>
     </section>
 
-    <section id="header">
-        <h2>Header</h2>
-        <p>The header is at the top of the page and is not sticky.</p>
+    <section id="reading-plan">
+        <h2>Reading Plan</h2>
+        <p>Generate your randomized Bible reading plan below. Just copy the result and print it.</p>
+        <button id="generatePlan">Generate Plan</button>
+
+        <!-- Add event listener -->
+        <script>
+            document.getElementById('generatePlan').addEventListener('click', function() {
+                window.displayBibleBookNames(); // Call the function from BibleBooks.js
+            });
+        </script>
     </section>
 
-    <section id="leftNavbar">
-        <h2>Left Navbar</h2>
-        <p>The left navbar is there to add links to other pages on the same website. The currently active page needs to
-            get manually highlighted. When the user scrolls down, the content of the left navbar sticks to the
-            top.</p>
-    </section>
 
-    <section id="rightNavbar">
-        <h2>Right Navbar</h2>
-        <p>The content of the right navbar should match the section headings. The user can use this navbar to jump
-            within the page.</p>
-    </section>
 
-    <section id="articleArea">
-        <h2>Article Area</h2>
-        <p>Use HTML section elements to break down the content.</p>
-    </section>
-
-    <section id="footer">
-        <h2>Footer</h2>
-        <p>The footer is at the bottom of the page and is not sticky. If the content area is not big enough to fill the
-            whole page, the footer gets pushed to the bottom of the viewport.</p>
-    </section>
-
-    <section id="responsiveness">
-        <h2>Responsiveness</h2>
-        <p>For smaller devices, the left navbar gets put on the top of the article area while the right navbar
-            disappears.</p>
-    </section>
-
-    <section id="bestPractices">
-        <h2>Best Practices</h2>
-        <p>The Lighthouse rating is 100%</p>
-    </section>
 
 </article>
 
@@ -94,4 +67,5 @@
     <a href="https://github.com/your_username" class="footer-link" target="_blank">GitHub</a>
 
 </footer>
+<script src="BibleBooks.js"></script>
 </body>
