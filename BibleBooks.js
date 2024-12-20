@@ -95,7 +95,7 @@ function displayBibleBookNames() {
     listContainer.innerHTML = "";
 
     // const shuffledBooks = shuffleArray(otBooks);
-    const shuffledBooks = getRandomizesBooks();
+    const shuffledBooks = getRandomizedBooks();
 
     // Add each book name as a list item
     shuffledBooks.forEach(book => {
@@ -105,32 +105,32 @@ function displayBibleBookNames() {
     });
 }
 
-function getRandomizesBooks() {
+function getRandomizedBooks() {
     let otBooks = shuffleArray(getOtBooks());
     let ntBooks = shuffleArray(getNtBooks());
     const difCount = otBooks.length - ntBooks.length;
     let otOverflowBooks = otBooks.splice(0, difCount);
-    otOverflowBooks = otOverflowBooks.map(book => {
-        book.name = `${book.name} XXXXXXX`;
-        return book;
-    });// TODO debug
     let combinedBooks = [];
 
+    // Interleave otBooks and ntBooks
     for (let i = 0; i < otBooks.length; i++) {
         combinedBooks.push(otBooks[i]);
         combinedBooks.push(ntBooks[i]);
     }
 
-    // shuffle in the otOverflowBooks
-    const interval = Math.floor(combinedBooks.length / otOverflowBooks.length);
-    console.log(interval);
+    // Shuffle otOverflowBooks
+    otOverflowBooks = shuffleArray(otOverflowBooks);
+
+    // Dynamic interval calculation
+    const totalSlots = combinedBooks.length + otOverflowBooks.length;
+    const interval = totalSlots / otOverflowBooks.length;
+
+    // Insert otOverflowBooks at fractional intervals
+    let currentOffset = 0;
     for (let i = 0; i < otOverflowBooks.length; i++) {
-        const insertIndex = i * interval + Math.min(i, combinedBooks.length - 1);
-        combinedBooks.splice(insertIndex, 0, otOverflowBooks[i]);
+        const insertIndex = Math.round(currentOffset + interval * i);
+        combinedBooks.splice(Math.min(insertIndex, combinedBooks.length), 0, otOverflowBooks[i]);
     }
-
-
-    console.log(combinedBooks.length)
     return combinedBooks;
 }
 
