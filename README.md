@@ -1,10 +1,10 @@
-# Website Template
+# Bible Reading Plan
 
-This is an HTML template for text heavy documentation projects suiting my needs. It is a minimalistic and professional
-looking design in the form of the holy grail layout.
+Reading the Bible cover to cover from Genesis to Revelation is great but has the downside that the order of the books is such that it takes you a long time until you reach the New Testament, which can be demotivating.
 
-I made this template with the intention of using it to publish things like guides, technical documentations or my own
-CV.
+There are various solutions, for example, some read the Old and New Testaments in parallel.
 
-The template can get tested here: https://norman1.github.io/website-template/index.html
+However, I haven't felt happy with that, so I created this small program to automatically generate a pathway through the Bible to read it cover to cover. This program randomizes the order of the Bible books while ensuring that the Old Testament and New Testament are read in a balanced way.
+
+Create your Bible reading plan here: https://norman1.github.io/christian-resources/index.html
 
