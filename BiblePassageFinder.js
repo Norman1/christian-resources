@@ -1,16 +1,36 @@
-// Function for "Increase Passage Length" button
-function increaseRange() {
-    return getRandomBibleBookAndChapter();
-    // console.log("Increase Passage Length clicked");
-}
+let hidden = true; // Global variable to control visibility
 
-// Function for "Show Solution" button
+let currentPassage = {
+    book: null,
+    chapter: null,
+    verses: []
+};
+
 function showSolution() {
-    console.log("Show Solution clicked");
-}
+    hidden = false;
+    updateShowSolutionButton();
 
+    // Fetch the current passage data and update the HTML content
+    fetch('./web.json')
+        .then(response => response.json())
+        .then(data => {
+            const versesInChapter = data.verses.filter(verse =>
+                verse.book === currentPassage.book &&
+                verse.chapter === currentPassage.chapter &&
+                currentPassage.verses.includes(verse.verse)
+            );
+            updateHtmlContent(versesInChapter);
+        });
+}
 
 function nextPassage() {
+    console.log(currentPassage);
+    hidden = true;
+    updateShowSolutionButton(); // Update the button state
+    const increaseRangeButton = document.getElementById("increaseRange");
+    increaseRangeButton.disabled = false;
+
+
     fetch('./web.json')
         .then(response => response.json())
         .then(data => {
@@ -25,6 +45,11 @@ function nextPassage() {
             // Select a random verse from the filtered verses
             const randomVerse = versesInChapter[Math.floor(Math.random() * versesInChapter.length)];
 
+            // Save the current passage in the global variable
+            currentPassage.book = randomBookAndChapter.number;
+            currentPassage.chapter = randomBookAndChapter.chapter;
+            currentPassage.verses = [randomVerse.verse];
+
             // Get or create the dedicated container
             const gameSection = document.getElementById("game");
             let verseContainer = document.getElementById("verseContainer");
@@ -34,30 +59,98 @@ function nextPassage() {
                 gameSection.appendChild(verseContainer);
             }
 
-            // Update the container content with the random verse
-            verseContainer.innerHTML = `
-                <pre>${JSON.stringify(randomVerse, null, 2)}</pre>
-            `;
+            updateHtmlContent([randomVerse]);
+        });
+
+}
+
+function increaseRange() {
+    fetch('./web.json')
+        .then(response => response.json())
+        .then(data => {
+            const versesInChapter = data.verses.filter(verse =>
+                verse.book === currentPassage.book &&
+                verse.chapter === currentPassage.chapter
+            );
+
+            // Get the current range
+            const maxVerse = Math.min(Math.max(...currentPassage.verses) + 1, versesInChapter.length);
+
+            if (maxVerse > Math.max(...currentPassage.verses)) {
+                // Add the next verse at the end
+                currentPassage.verses.push(maxVerse);
+            } else {
+                // Add the previous verse at the start
+                const minVerse = Math.max(1, Math.min(...currentPassage.verses) - 1);
+                currentPassage.verses.unshift(minVerse);
+            }
+
+            // Get the selected verses
+            const selectedVerses = versesInChapter.filter(verse =>
+                currentPassage.verses.includes(verse.verse)
+            );
+
+            // Update the container content with the selected verses
+            const gameSection = document.getElementById("game");
+            let verseContainer = document.getElementById("verseContainer");
+            if (!verseContainer) {
+                verseContainer = document.createElement("div");
+                verseContainer.id = "verseContainer";
+                gameSection.appendChild(verseContainer);
+            }
+
+            updateHtmlContent(selectedVerses);
         });
 }
 
+function updateHtmlContent(verses) {
+    const gameSection = document.getElementById("game");
+    let verseContainer = document.getElementById("verseContainer");
+    if (!verseContainer) {
+        verseContainer = document.createElement("div");
+        verseContainer.id = "verseContainer";
+        gameSection.appendChild(verseContainer);
+    }
+
+// Add content for the book title
+    let bookPlaceholder = document.getElementById("bookPlaceholder");
+    if (!bookPlaceholder) {
+        bookPlaceholder = document.createElement("div");
+        bookPlaceholder.id = "bookPlaceholder";
+        bookPlaceholder.className = "book-placeholder";
+        gameSection.insertBefore(bookPlaceholder, verseContainer);
+    }
+    bookPlaceholder.innerHTML = hidden ? "?" : verses[0]?.book_name || "";
+
+// Update the verses content
+    verseContainer.innerHTML = verses.map(verse => `
+    <div class="verse-container">
+        ${hidden ? "?" : `${verse.chapter}:${verse.verse}`} - ${verse.text}
+    </div>
+`).join('');
+
+}
 
 function getRandomBibleBookAndChapter() {
-    const bibleBooks = getBibleBooks(); // Reuse the previous function
-    const randomBookIndex = Math.floor(Math.random() * bibleBooks.length); // Random index for the book
-    const randomBook = bibleBooks[randomBookIndex];
-    const randomChapter = Math.floor(Math.random() * randomBook.chapters) + 1; // Random chapter within the book's range
+    const selectedBooks = Array.from(document.querySelectorAll("input[name='selectedBooks']:checked"))
+        .map(checkbox => parseInt(checkbox.value));
 
-    let result = {
+    const bibleBooks = getBibleBooks().filter(book => selectedBooks.includes(book.number));
+
+    if (bibleBooks.length === 0) {
+        throw new Error("No Bible books selected");
+    }
+
+    const randomBookIndex = Math.floor(Math.random() * bibleBooks.length);
+    const randomBook = bibleBooks[randomBookIndex];
+    const randomChapter = Math.floor(Math.random() * randomBook.chapters) + 1;
+
+    return {
         number: randomBook.number,
         name: randomBook.name,
         chapter: randomChapter
     };
-    console.log(result);
-    return result;
-
 }
-
 
 function getBibleBooks() {
     return [
@@ -130,8 +223,77 @@ function getBibleBooks() {
     ];
 }
 
+function updateShowSolutionButton() {
+    const showSolutionButton = document.getElementById("showSolution");
+    showSolutionButton.disabled = !hidden;
+}
 
-// Add event listeners to the buttons
-document.getElementById("increaseRange").addEventListener("click", increaseRange);
-document.getElementById("showSolution").addEventListener("click", showSolution);
-document.getElementById("nextPassage").addEventListener("click", nextPassage);
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const showSolutionButton = document.getElementById("showSolution");
+    const increaseRangeButton = document.getElementById("increaseRange");
+
+    // Initially disable the buttons
+    showSolutionButton.disabled = true;
+    increaseRangeButton.disabled = true;
+
+    // Add event listeners to the buttons
+    document.getElementById("showSolution").addEventListener("click", showSolution);
+    document.getElementById("nextPassage").addEventListener("click", nextPassage);
+    document.getElementById("increaseRange").addEventListener("click", increaseRange);
+
+    // Dynamically generate checkboxes for Bible books
+    const bibleBooks = getBibleBooks(); // Reuse your existing function
+    const bookListDiv = document.getElementById("bookList");
+
+    if (bookListDiv) { // Ensure the element exists
+        // Create the "Select All" checkbox
+        const selectAllContainer = document.createElement("div");
+        selectAllContainer.className = "checkbox-container";
+
+        const selectAllCheckbox = document.createElement("input");
+        selectAllCheckbox.type = "checkbox";
+        selectAllCheckbox.id = "select-all";
+        selectAllCheckbox.checked = true; // Default to checked
+
+        const selectAllLabel = document.createElement("label");
+        selectAllLabel.htmlFor = "select-all";
+        selectAllLabel.textContent = "Select All";
+
+        selectAllContainer.appendChild(selectAllCheckbox);
+        selectAllContainer.appendChild(selectAllLabel);
+        bookListDiv.appendChild(selectAllContainer);
+
+        // Add event listener to "Select All" checkbox
+        selectAllCheckbox.addEventListener("change", (event) => {
+            const checkboxes = bookListDiv.querySelectorAll("input[type='checkbox']");
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = event.target.checked;
+            });
+        });
+
+        // Create checkboxes for each Bible book
+        bibleBooks.forEach(book => {
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = `book-${book.number}`;
+            checkbox.name = "selectedBooks";
+            checkbox.value = book.number;
+            checkbox.checked = true; // Default to checked
+
+            const label = document.createElement("label");
+            label.htmlFor = `book-${book.number}`;
+            label.textContent = book.name;
+
+            const container = document.createElement("div");
+            container.className = "checkbox-container"; // Add class for styling
+            container.appendChild(checkbox);
+            container.appendChild(label);
+
+            bookListDiv.appendChild(container);
+        });
+    } else {
+        console.error("Element with ID 'bookList' not found!");
+    }
+});

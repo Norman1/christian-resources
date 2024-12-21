@@ -7,11 +7,12 @@
     <title>Bible Reading Plan</title>
     <link rel="stylesheet" href="holy-grail.css">
     <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="passage-finder.css">
 </head>
 <body>
 <header id="pageHeader">Normans Resources</header>
 <article id="mainArticle">
-    <h1>Random Bible passage finder</h1>
+    <h1>Random Bible Passage Finder</h1>
     <section id="about">
         <h2>About</h2>
         <p>This is a training program to help you get more proficient in handling your Bible. You get a random Bible
@@ -22,16 +23,19 @@
         <p>I believe the results are best if you don't give up too easily on a passage and look up every passage in a
             physical Bible.</p>
     </section>
-    <section id="settings">
-        <h2>Settings</h2>
-        <p>TODO</p>
-    </section>
+
     <section id="game">
         <h2>Game</h2>
-        <p>xxx</p>
         <button id="increaseRange">Increase Passage Length</button>
         <button id="showSolution">Show Solution</button>
         <button id="nextPassage">Next Passage</button>
+    </section>
+
+    <section id="settings">
+        <h2>Selected Books</h2>
+        <div id="bookList">
+            <!-- Checkboxes for Bible books will be dynamically inserted here -->
+        </div>
     </section>
 
 </article>
@@ -40,7 +44,7 @@
     <div class="stickyDiv">
         <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Bible Reading Plan</a></li>
-            <li><a href="passage-finder.html" class="nav-link active">Passage Finder</a></li>
+            <li><a href="passage-finder.html" class="nav-link active">Random Bible Passage Lookup</a></li>
         </ul>
     </div>
 </nav>
@@ -48,8 +52,8 @@
     <div class="stickyDiv">
         <ul class="nav-list">
             <li><a href="#about" class="nav-link nav-link-right">About</a></li>
-            <li><a href="#settings" class="nav-link nav-link-right">Settings</a></li>
             <li><a href="#game" class="nav-link nav-link-right">Game</a></li>
+            <li><a href="#settings" class="nav-link nav-link-right">Settings</a></li>
         </ul>
     </div>
 </div>

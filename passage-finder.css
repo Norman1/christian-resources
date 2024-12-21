@@ -1,0 +1,17 @@
+.checkbox-container {
+    padding: 0;
+}
+
+.book-placeholder {
+    font-size: 20px;
+    font-weight: bold;
+    /*margin-bottom: 10px;*/
+    padding-bottom: 0;
+}
+
+.verse-container {
+    margin: 5px;
+    padding: 1px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
