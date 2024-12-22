@@ -24,7 +24,6 @@ function showSolution() {
 }
 
 function nextPassage() {
-    console.log(currentPassage);
     hidden = true;
     updateShowSolutionButton(); // Update the button state
     const increaseRangeButton = document.getElementById("increaseRange");
