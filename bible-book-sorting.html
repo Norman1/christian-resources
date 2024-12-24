@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find the quoted Bible passage.">
+    <meta name="description" content="Helps you to learn the order of the Bible books">
     <title>Locate the Verse</title>
     <link rel="stylesheet" href="global/holy-grail.css">
     <link rel="stylesheet" href="global/global.css">
@@ -12,31 +12,26 @@
 <body>
 <header id="pageHeader">Normans Resources</header>
 <article id="mainArticle">
-    <h1>Find the Passage</h1>
+    <h1>Bible Book Sorting</h1>
     <section id="about">
         <h2>About</h2>
-        <p>This is a training program to help you get more proficient in handling your Bible. You get a random Bible
-            passage and have to find it in your Bible.
-            If you don't find it, you can increase the passage length.</p>
-        <p>I have created the program for myself as the most "brutal" no nonsense way for me to help me get more
-            proficient looking up passages in my Bible.</p>
-        <p>I believe the results are best if you don't give up too easily on a passage and look up every passage in a
-            physical Bible.</p>
+        <p>A small program helping you to memorize the correct order of the Bible books.</p>
     </section>
-
     <section id="game">
         <h2>Game</h2>
-        <button id="increaseRange">Increase Passage Length</button>
-        <button id="showSolution">Show Solution</button>
-        <button id="nextPassage">Next Passage</button>
+        <button id="nextBookButton">Next Book</button>
+        <br><br>
+        <label for="previousBookInput">Previous Book:</label>
+        <input type="text" id="previousBookInput" placeholder="Enter the previous book">
+        <span id="previousBookInputFeedback"></span>
+        <p>
+            <span id="selectedBookDisplay">None</span>
+        </p>
+        <label for="nextBookInput">Next Book:</label>
+        <input type="text" id="nextBookInput" placeholder="Enter the next book">
+        <span id="nextBookInputFeedback"></span>
     </section>
 
-    <section id="settings">
-        <h2>Selected Books</h2>
-        <div id="bookList">
-            <!-- Checkboxes for Bible books will be dynamically inserted here -->
-        </div>
-    </section>
 
 </article>
 
@@ -44,9 +39,9 @@
     <div class="stickyDiv">
         <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Bible Reading Plan</a></li>
-            <li><a href="find-the-passage.html" class="nav-link active">Find the Passage</a></li>
+            <li><a href="find-the-passage.html" class="nav-link">Find the Passage</a></li>
             <li><a href="find-the-book.html" class="nav-link">Find the Book</a></li>
-            <li><a href="bible-book-sorting.html" class="nav-link">Bible Book Sorting</a></li>
+            <li><a href="bible-book-sorting.html" class="nav-link active">Bible Book Sorting</a></li>
         </ul>
     </div>
 </nav>
@@ -55,7 +50,6 @@
         <ul class="nav-list">
             <li><a href="#about" class="nav-link nav-link-right">About</a></li>
             <li><a href="#game" class="nav-link nav-link-right">Game</a></li>
-            <li><a href="#settings" class="nav-link nav-link-right">Settings</a></li>
         </ul>
     </div>
 </div>
@@ -63,5 +57,5 @@
     <a href="https://github.com/Norman1/christian-resources" class="footer-link" target="_blank">GitHub</a>
     <a href="https://discord.gg/kc7xGpkT" class="footer-link" target="_blank">Christian Discord Server</a>
 </footer>
-<script src="find-the-passage/BiblePassageFinder.js"></script>
+<script src="bible-book-sorting/BibleBookSorting.js"></script>
 </body>
