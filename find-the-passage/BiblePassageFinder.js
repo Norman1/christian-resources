@@ -11,7 +11,7 @@ function showSolution() {
     updateShowSolutionButton();
 
     // Fetch the current passage data and update the HTML content
-    fetch('./web.json')
+    fetch('./find-the-passage/web.json')
         .then(response => response.json())
         .then(data => {
             const versesInChapter = data.verses.filter(verse =>
@@ -30,7 +30,7 @@ function nextPassage() {
     increaseRangeButton.disabled = false;
 
 
-    fetch('./web.json')
+    fetch('./find-the-passage/web.json')
         .then(response => response.json())
         .then(data => {
             const randomBookAndChapter = getRandomBibleBookAndChapter();
@@ -64,7 +64,7 @@ function nextPassage() {
 }
 
 function increaseRange() {
-    fetch('./web.json')
+    fetch('./find-the-passage/web.json')
         .then(response => response.json())
         .then(data => {
             const versesInChapter = data.verses.filter(verse =>
