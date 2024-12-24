@@ -12,31 +12,21 @@
 <body>
 <header id="pageHeader">Normans Resources</header>
 <article id="mainArticle">
-    <h1>Find the Passage</h1>
+    <h1>Find the Book</h1>
     <section id="about">
         <h2>About</h2>
-        <p>This is a training program to help you get more proficient in handling your Bible. You get a random Bible
-            passage and have to find it in your Bible.
-            If you don't find it, you can increase the passage length.</p>
-        <p>I have created the program for myself as the most "brutal" no nonsense way for me to help me get more
-            proficient looking up passages in my Bible.</p>
-        <p>I believe the results are best if you don't give up too easily on a passage and look up every passage in a
-            physical Bible.</p>
+        <p>Guess the Bible Book given the description.</p>
     </section>
-
     <section id="game">
         <h2>Game</h2>
-        <button id="increaseRange">Increase Passage Length</button>
-        <button id="showSolution">Show Solution</button>
-        <button id="nextPassage">Next Passage</button>
+        <button onclick="nextBook()">Next Book</button>
+        <button onclick="showTitle()">Show Title</button>
+        <p id="descriptionDisplay"></p>
+        <p id="titleDisplay"></p>
+        <label for="titleInput"></label><input type="text" id="titleInput" placeholder="Enter the book title">
+        <p id="validationResult"></p>
     </section>
 
-    <section id="settings">
-        <h2>Selected Books</h2>
-        <div id="bookList">
-            <!-- Checkboxes for Bible books will be dynamically inserted here -->
-        </div>
-    </section>
 
 </article>
 
@@ -44,8 +34,8 @@
     <div class="stickyDiv">
         <ul class="nav-list">
             <li><a href="index.html" class="nav-link">Bible Reading Plan</a></li>
-            <li><a href="find-the-passage.html" class="nav-link active">Find the Passage</a></li>
-            <li><a href="find-the-book.html" class="nav-link">Find the Book</a></li>
+            <li><a href="find-the-passage.html" class="nav-link">Find the Passage</a></li>
+            <li><a href="find-the-book.html" class="nav-link active">Find the Book</a></li>
         </ul>
     </div>
 </nav>
@@ -54,7 +44,6 @@
         <ul class="nav-list">
             <li><a href="#about" class="nav-link nav-link-right">About</a></li>
             <li><a href="#game" class="nav-link nav-link-right">Game</a></li>
-            <li><a href="#settings" class="nav-link nav-link-right">Settings</a></li>
         </ul>
     </div>
 </div>
@@ -62,5 +51,5 @@
     <a href="https://github.com/Norman1/christian-resources" class="footer-link" target="_blank">GitHub</a>
     <a href="https://discord.gg/kc7xGpkT" class="footer-link" target="_blank">Christian Discord Server</a>
 </footer>
-<script src="find-the-passage/BiblePassageFinder.js"></script>
+<script src="find-the-book/FindTheBook.js"></script>
 </body>
