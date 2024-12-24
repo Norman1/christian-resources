@@ -86,8 +86,9 @@ function validateInput(inputId, expectedBook) {
     const feedbackElement = document.getElementById(`${inputId}Feedback`);
 
     if (inputElement && feedbackElement) {
-        const inputValue = inputElement.value.trim();
-        feedbackElement.textContent = inputValue === expectedBook ? "OK" : "Wrong Book";
+        const inputValue = inputElement.value.trim().toLowerCase();
+        const expectedValue = expectedBook.toLowerCase();
+        feedbackElement.textContent = inputValue === expectedValue ? "OK" : "Wrong Book";
     }
 }
 
