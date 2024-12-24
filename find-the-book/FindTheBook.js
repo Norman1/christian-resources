@@ -17,7 +17,7 @@ function nextBook() {
         validationResult.textContent = ''; // Clear the validation result
     }
 
-    fetch('/find-the-book/book-descriptions.json')
+    fetch('./find-the-book/book-descriptions.json')
         .then(response => response.json())
         .then(bibleBooks => {
             let randomIndex;
