@@ -1,0 +1,117 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jericho",
+        "description": "An ancient city mentioned in the Bible."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4501,
+          31.8694
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jerusalem",
+        "description": "The holy city and capital of ancient Israel."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2137,
+          31.7683
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bethlehem",
+        "description": "The birthplace of Jesus Christ."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2052,
+          31.7054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Babylon",
+        "description": "A major city of the Babylonian Empire, located near modern Baghdad."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.4234,
+          32.5392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nineveh",
+        "description": "An ancient Assyrian city near modern Mosul."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.1500,
+          36.3667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mount Sinai",
+        "description": "The mountain where Moses received the Ten Commandments."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.9750,
+          28.5392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Alexandria",
+        "description": "A prominent city of ancient Egypt, home to a famous library."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.9187,
+          31.2001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Damascus",
+        "description": "One of the oldest continuously inhabited cities in the world."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.2765,
+          33.5102
+        ]
+      }
+    }
+  ]
+}
