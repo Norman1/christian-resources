@@ -112,6 +112,90 @@
           33.5102
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Capernaum",
+        "description": "A town on the Sea of Galilee where Jesus performed many miracles."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.5733,
+          32.8803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hebron",
+        "description": "An ancient city associated with Abraham and the burial site of the patriarchs."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0956,
+          31.5294
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beersheba",
+        "description": "A city often referred to as the southernmost border of ancient Israel."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.7984,
+          31.2520
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shiloh",
+        "description": "The site of the Tabernacle during the time of the Judges."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2908,
+          32.0541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gaza",
+        "description": "A Philistine city mentioned in the Bible."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.4625,
+          31.5013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Megiddo",
+        "description": "An ancient city known for its strategic location and biblical significance."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1828,
+          32.5841
+        ]
+      }
     }
   ]
 }
