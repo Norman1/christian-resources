@@ -11,7 +11,6 @@ async function loadQuestions() {
     remainingQuestions = [...questions]; // Initially, all questions are available
 }
 
-
 async function applyFilter() {
     if (remainingQuestions.length === 0 && questions.length === 0) {
         await loadQuestions(); // Ensure questions are loaded
@@ -20,8 +19,6 @@ async function applyFilter() {
     const books = bookFilterInput.split(';').map(book => book.trim().toLowerCase());
 
     // Filter questions where at least one of the specified books matches
-    console.log(questions);
-    console.log(remainingQuestions);
     filteredQuestions = questions.filter(question =>
         question.books.some(book => books.includes(book.toLowerCase()))
     );
@@ -51,8 +48,7 @@ async function applyFilter() {
 function getNextQuestion() {
     if (remainingQuestions.length > 0) {
         const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
-        const question = remainingQuestions.splice(randomIndex, 1)[0]; // Remove and return the question
-        return question;
+        return remainingQuestions.splice(randomIndex, 1)[0];
     } else {
         return null; // No more questions
     }

@@ -1,5 +1,5 @@
 # About
 
-A website containing Christianity related resources.
+WarLight (nowadays renamed to Warzone) guides
 
-Open it here: https://norman1.github.io/christian-resources/index.html
+Open it here: xxxxx
