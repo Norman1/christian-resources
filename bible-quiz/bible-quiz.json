@@ -1,0 +1,287 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "type": "single",
+      "question": "Who was the first king of Israel?",
+      "options": [
+        "Saul",
+        "David",
+        "Solomon",
+        "Samuel"
+      ],
+      "answer": [
+        "Saul"
+      ],
+      "books": [
+        "1 Samuel"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multiple",
+      "question": "Which of these are considered Gospels?",
+      "options": [
+        "Matthew",
+        "Mark",
+        "Genesis",
+        "Luke"
+      ],
+      "answer": [
+        "Matthew",
+        "Mark",
+        "Luke"
+      ],
+      "books": [
+        "Matthew",
+        "Mark",
+        "Luke"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "single",
+      "question": "What is the longest book in the Bible?",
+      "options": [
+        "Psalms",
+        "Isaiah",
+        "Genesis",
+        "Jeremiah"
+      ],
+      "answer": [
+        "Psalms"
+      ],
+      "books": [
+        "Psalms"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multiple",
+      "question": "Which of these are names of prophets in the Old Testament?",
+      "options": [
+        "Isaiah",
+        "Jeremiah",
+        "Moses",
+        "Elijah"
+      ],
+      "answer": [
+        "Isaiah",
+        "Jeremiah",
+        "Elijah"
+      ],
+      "books": [
+        "Isaiah",
+        "Jeremiah",
+        "1 Kings"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "single",
+      "question": "In which book is the story of the Exodus found?",
+      "options": [
+        "Exodus",
+        "Genesis",
+        "Leviticus",
+        "Numbers"
+      ],
+      "answer": [
+        "Exodus"
+      ],
+      "books": [
+        "Exodus"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multiple",
+      "question": "Which of these were apostles of Jesus?",
+      "options": [
+        "Peter",
+        "Paul",
+        "John",
+        "Luke"
+      ],
+      "answer": [
+        "Peter",
+        "John"
+      ],
+      "books": [
+        "Matthew",
+        "Mark",
+        "Luke",
+        "John"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "What is the final book of the Bible?",
+      "options": [
+        "Revelation",
+        "Jude",
+        "Acts",
+        "Hebrews"
+      ],
+      "answer": [
+        "Revelation"
+      ],
+      "books": [
+        "Revelation"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multiple",
+      "question": "Which books are part of the Pentateuch?",
+      "options": [
+        "Genesis",
+        "Exodus",
+        "Psalms",
+        "Leviticus"
+      ],
+      "answer": [
+        "Genesis",
+        "Exodus",
+        "Leviticus"
+      ],
+      "books": [
+        "Genesis",
+        "Exodus",
+        "Leviticus",
+        "Numbers",
+        "Deuteronomy"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "Who betrayed Jesus for 30 pieces of silver?",
+      "options": [
+        "Judas Iscariot",
+        "Peter",
+        "John",
+        "Thomas"
+      ],
+      "answer": [
+        "Judas Iscariot"
+      ],
+      "books": [
+        "Matthew",
+        "Mark",
+        "Luke",
+        "John"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multiple",
+      "question": "Which of these were plagues of Egypt?",
+      "options": [
+        "Frogs",
+        "Darkness",
+        "Locusts",
+        "Flood"
+      ],
+      "answer": [
+        "Frogs",
+        "Darkness",
+        "Locusts"
+      ],
+      "books": [
+        "Exodus"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "What was the name of the king who threw Daniel into the lion's den?",
+      "options": [
+        "Nebuchadnezzar",
+        "Darius",
+        "Cyrus",
+        "Belshazzar"
+      ],
+      "answer": [
+        "Darius"
+      ],
+      "books": [
+        "Daniel"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "single",
+      "question": "What was the writing on the wall interpreted by Daniel?",
+      "options": [
+        "Mene, Mene, Tekel, Upharsin",
+        "Eloi, Eloi, Lama Sabachthani",
+        "Hosanna in the Highest",
+        "In the Beginning"
+      ],
+      "answer": [
+        "Mene, Mene, Tekel, Upharsin"
+      ],
+      "books": [
+        "Daniel"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "multiple",
+      "question": "Which of these were visions seen by Daniel?",
+      "options": [
+        "Four beasts",
+        "A ram and a goat",
+        "A statue of gold, silver, bronze, iron, and clay",
+        "The burning bush"
+      ],
+      "answer": [
+        "Four beasts",
+        "A ram and a goat",
+        "A statue of gold, silver, bronze, iron, and clay"
+      ],
+      "books": [
+        "Daniel"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "single",
+      "question": "Who were Daniel's three friends who were thrown into the fiery furnace?",
+      "options": [
+        "Shadrach, Meshach, and Abednego",
+        "Peter, James, and John",
+        "Cain, Abel, and Seth",
+        "Joshua, Caleb, and Aaron"
+      ],
+      "answer": [
+        "Shadrach, Meshach, and Abednego"
+      ],
+      "books": [
+        "Daniel"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "multiple",
+      "question": "Which kings are mentioned in the book of Daniel?",
+      "options": [
+        "Nebuchadnezzar",
+        "Belshazzar",
+        "Darius",
+        "Cyrus"
+      ],
+      "answer": [
+        "Nebuchadnezzar",
+        "Belshazzar",
+        "Darius",
+        "Cyrus"
+      ],
+      "books": [
+        "Daniel"
+      ]
+    }
+  ]
+}

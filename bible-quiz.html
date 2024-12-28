@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Helps you to learn the order of the Bible books">
-    <title>Locate the Verse</title>
+    <meta name="description" content="Find out which Bible book is described.">
+    <title>Bible Quiz</title>
     <link rel="stylesheet" href="global/holy-grail.css">
     <link rel="stylesheet" href="global/global.css">
     <link rel="stylesheet" href="find-the-passage/passage-finder.css">
@@ -12,24 +12,27 @@
 <body>
 <header id="pageHeader">Normans Resources</header>
 <article id="mainArticle">
-    <h1>Bible Book Sorting</h1>
+    <h1>Bible Quiz</h1>
     <section id="about">
         <h2>About</h2>
-        <p>A small program helping you to memorize the correct order of the Bible books.</p>
+        <p>A Bible quiz.</p>
     </section>
+
+
     <section id="game">
         <h2>Game</h2>
-        <button id="nextBookButton">Next Book</button>
-        <br><br>
-        <label for="previousBookInput">Previous Book:</label>
-        <input type="text" id="previousBookInput" placeholder="Enter the previous book">
-        <span id="previousBookInputFeedback"></span>
-        <p>
-            <span id="selectedBookDisplay">None</span>
-        </p>
-        <label for="nextBookInput">Next Book:</label>
-        <input type="text" id="nextBookInput" placeholder="Enter the next book">
-        <span id="nextBookInputFeedback"></span>
+        <div id="filter-container">
+            <label for="book-filter">Filter by Bible Books:</label>
+            <input type="text" id="book-filter" placeholder="Enter books (e.g., Daniel; Haggai)"/>
+            <button onclick="applyFilter()">Apply Filter</button>
+        </div>
+        <div id="question-container">
+            <p id="question">Press "Next" to start the quiz!</p>
+            <form id="options-form"></form>
+            <p id="feedback"></p> <!-- Feedback text will go here -->
+        </div>
+        <button onclick="displayNextQuestion()">Next</button>
+        <button onclick="submitAnswer()">Submit</button>
     </section>
 
 
@@ -41,10 +44,10 @@
             <li><a href="index.html" class="nav-link">Bible Reading Plan</a></li>
             <li><a href="find-the-passage.html" class="nav-link">Find the Passage</a></li>
             <li><a href="find-the-book.html" class="nav-link">Find the Book</a></li>
-            <li><a href="bible-book-sorting.html" class="nav-link active">Bible Book Sorting</a></li>
+            <li><a href="bible-book-sorting.html" class="nav-link">Bible Book Sorting</a></li>
             <li><a href="biblical-dates.html" class="nav-link">Biblical Dates</a></li>
             <li><a href="biblical-locations.html" class="nav-link">Biblical Locations</a></li>
-            <li><a href="bible-quiz.html" class="nav-link">Bible Quiz</a></li>
+            <li><a href="bible-quiz.html" class="nav-link active">Bible Quiz</a></li>
         </ul>
     </div>
 </nav>
@@ -60,5 +63,5 @@
     <a href="https://github.com/Norman1/christian-resources" class="footer-link" target="_blank">GitHub</a>
     <a href="https://discord.gg/kc7xGpkT" class="footer-link" target="_blank">Christian Discord Server</a>
 </footer>
-<script src="bible-book-sorting/BibleBookSorting.js"></script>
+<script src="bible-quiz/BibleQuiz.js"></script>
 </body>
