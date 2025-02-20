@@ -282,6 +282,23 @@
       "books": [
         "Daniel"
       ]
+    },
+    {
+      "id": 16,
+      "type": "multiple",
+      "question": "Who was present at the council of Nicaea?",
+      "options": [
+        "Emperor Constantine I",
+        "Arius",
+        "Apostle Paul",
+        "Pope Leo I"
+      ],
+      "answer": [
+        "Emperor Constantine I"
+      ],
+      "books": [
+      ],
+      "notes": "The council of Nicaea was held in 325 AD to address the Arian controversy. <a href=\"https://en.wikipedia.org/wiki/First_Council_of_Nicaea\" target=\"_blank\" rel=\"noopener noreferrer\">First Council of Nicaea</a>."
     }
   ]
 }

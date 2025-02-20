@@ -64,10 +64,12 @@ async function displayNextQuestion() {
     const questionElement = document.getElementById('question');
     const optionsForm = document.getElementById('options-form');
     const feedbackElement = document.getElementById('feedback');
+    const notesElement = document.getElementById('notes');
 
     if (currentQuestion) {
         questionElement.textContent = currentQuestion.question;
-        feedbackElement.textContent = ""; // Clear feedback
+        feedbackElement.textContent = "";
+        notesElement.textContent = "";
 
         // Clear previous options
         optionsForm.innerHTML = "";
@@ -105,6 +107,7 @@ function submitAnswer() {
 
     const optionsForm = document.getElementById('options-form');
     const feedbackElement = document.getElementById('feedback');
+    const notesElement = document.getElementById('notes');
     const selectedOptions = Array.from(optionsForm.elements)
         .filter(input => input.checked)
         .map(input => input.value);
@@ -116,9 +119,11 @@ function submitAnswer() {
         correctAnswers.every(answer => selectedOptions.includes(answer))
     ) {
         feedbackElement.textContent = "Correct!";
-        feedbackElement.style.color = "green"; // Set feedback color to green
+        feedbackElement.style.color = "green";
+        notesElement.innerHTML = currentQuestion.notes || '';
     } else {
         feedbackElement.textContent = "Wrong Answer.";
-        feedbackElement.style.color = "red"; // Set feedback color to red
+        feedbackElement.style.color = "red";
+        notesElement.innerHTML = '';
     }
 }
