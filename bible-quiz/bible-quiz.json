@@ -98,6 +98,52 @@
       "books": [
       ],
       "notes": "<img src=\"bible-quiz/Idumeans-map.png\" alt=\"Map of Idumea\" />"
+    },
+    {
+      "id": 7,
+      "type": "single",
+      "question": "The Jewish priests during the time of Jesus belonged almost entirely to which group?",
+      "options": [
+        "Pharisees",
+        "Essenes",
+        "Roman non Israelites",
+        "Sadducees"
+      ],
+      "answer": [
+        "Sadducees"
+      ],
+      "books": [
+      ]
+    },
+    {
+      "id": 8,
+      "type": "single",
+      "question": "Which Jewish group declared the oral law as equal to the written law?",
+      "options": [
+        "Pharisees",
+        "Essenes",
+        "Sadducees"
+      ],
+      "answer": [
+        "Pharisees"
+      ],
+      "books": [
+      ]
+    },
+    {
+      "id": 9,
+      "type": "single",
+      "question": "The members of which Jewish group lived excluded from society",
+      "options": [
+        "Pharisees",
+        "Essenes",
+        "Sadducees"
+      ],
+      "answer": [
+        "Essenes"
+      ],
+      "books": [
+      ]
     }
   ]
 }
