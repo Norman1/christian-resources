@@ -144,6 +144,77 @@
       ],
       "books": [
       ]
+    },
+    {
+      "id": 10,
+      "type": "multiple",
+      "question": "What sources of authority did the Pharisees accept in Jesus’ time?",
+      "options": [
+        "Written Torah",
+        "Oral Torah",
+        "Prophets and Writings",
+        "Greek Philosophy"
+      ],
+      "answer": [
+        "Written Torah",
+        "Oral Torah",
+        "Prophets and Writings"
+      ],
+      "books": [
+      ]
+    },
+    {
+      "id": 11,
+      "type": "single",
+      "question": "When was the Babylonian Talmud compiled?",
+      "options": [
+        "100 BC-70 AD",
+        "Around 200 AD",
+        "Between 200-500 AD",
+        "Starting 100 BC and is still ongoing"
+      ],
+      "answer": [
+        "Between 200-500 AD"
+      ],
+      "books": [
+      ],
+      "notes": " <a href=\"https://www.sefaria.org/texts\" target=\"_blank\" rel=\"noopener noreferrer\">Link to Talmud</a>"
+    },
+    {
+      "id": 12,
+      "type": "multiple",
+      "question": "What is the Mishnah in the context of Judaism?",
+      "options": [
+        "A collection of songs and prayers used in the Jewish Temple.",
+        "The Oral Torah compiled and written down around 200 AD.",
+        "A historical account of the Jewish exile written by the prophets.",
+        "An ancient Jewish calendar used to track feasts and holy days."
+      ],
+      "answer": [
+        "The Oral Torah compiled and written down around 200 AD"
+      ],
+      "books": [
+      ],
+      "notes": " <a href=\"https://www.sefaria.org/texts\" target=\"_blank\" rel=\"noopener noreferrer\">Link to Mishnah</a>"
+    },
+    {
+      "id": 13,
+      "type": "multiple",
+      "question": "Which of the following statements about the Septuagint are true?",
+      "options": [
+        "It is a Greek translation of the Hebrew Scriptures.",
+        "It was created by early Christians to spread the gospel.",
+        "It includes books not found in the Hebrew Bible (Masoretic Text).",
+        "It was translated in Alexandria, Egypt."
+      ],
+      "answer": [
+        "It is a Greek translation of the Hebrew Scriptures.",
+        "It includes books not found in the Hebrew Bible (Masoretic Text).",
+        "It was translated in Alexandria, Egypt."
+      ],
+      "books": [
+      ],
+      "notes": " <a href=\"https://www.biblestudytools.com/lxx/\" target=\"_blank\" rel=\"noopener noreferrer\">Link to Septuagint</a>"
     }
   ]
 }
